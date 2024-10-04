@@ -9,7 +9,7 @@ spec:
     localASN: 65000
     peers:
     - name: "peer-65000"
-      peerASN: 65000
+      peerASN: 65001
       peerAddress: 192.168.111.111
       peerConfigRef:
         name: "cilium-peer"
