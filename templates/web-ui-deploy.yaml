@@ -50,8 +50,9 @@ metadata:
   name: {{ .Release.Name }}-webui
   labels:
     epc-mode: webui
+    pool: {{ .Values.config.open5gsLbPool }}
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 3000

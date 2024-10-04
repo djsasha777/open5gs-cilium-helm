@@ -49,7 +49,7 @@ spec:
           - LoadBalancerIP
       selector:
         matchLabels:
-          pool: open5gsLbPool
+          pool: {{ .Values.config.open5gsLbPool }}
 
 ---
 apiVersion: cilium.io/v2alpha1

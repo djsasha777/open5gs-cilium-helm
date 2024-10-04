@@ -58,6 +58,7 @@ webui:
 dnn: internet  
 
 config:
+  open5gsLbPool: open5
   upfIP: "10.240.233.70"    
   amfIP: "10.240.233.72"
   amfPort: "38412"
