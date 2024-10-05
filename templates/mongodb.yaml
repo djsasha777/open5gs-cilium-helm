@@ -27,7 +27,8 @@ spec:
         command: ["/data/db/init.sh"]
         volumeMounts:
         - name: init-script
-          mountPath: /data/db
+          mountPath: /data/db/init.sh
+          subPath: init.sh
       containers:
       - image: free5gmano/nextepc-mongodb
         name: open5gs-mongodb
@@ -44,7 +45,7 @@ spec:
       - name: init-script
         configMap:
           name: init-script-configmap
-          defaultMode: 0500
+          defaultMode: 0777
 ---
 kind: PersistentVolume
 apiVersion: v1
