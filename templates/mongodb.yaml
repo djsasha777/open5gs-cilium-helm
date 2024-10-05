@@ -24,10 +24,10 @@ spec:
       initContainers:
       - name: init-myservice
         image: busybox:1.28
-        command: ["/data/db/init.sh"]
+        command: ["./init.sh"]
         volumeMounts:
         - name: init-script
-          mountPath: /data/db/init.sh
+          mountPath: ./init.sh
           subPath: init.sh
       containers:
       - image: free5gmano/nextepc-mongodb
