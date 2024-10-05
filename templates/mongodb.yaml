@@ -33,7 +33,7 @@ spec:
       initContainers:
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh', '-c', "/app.sh"]
+        command: ['sh', '-c', "/app/init.sh"]
         volumeMounts:
         - name: init-script
           mountPath: /app
