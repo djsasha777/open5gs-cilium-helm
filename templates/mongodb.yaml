@@ -30,6 +30,13 @@ spec:
         volumeMounts:
         - name: mongodb-persistent-storage
           mountPath: /data/db
+        env:
+        - name: MONGO_INITDB_DATABASE
+          value: {{ .Values.db.name }}
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: admin
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: password
       volumes:
       - name: mongodb-persistent-storage
         persistentVolumeClaim:

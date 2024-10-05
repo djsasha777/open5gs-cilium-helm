@@ -72,3 +72,6 @@ config:
 # Primary/Native kubernetes interface
 k8s:
  interface: ens18
+
+db:
+  name: open5gs
