@@ -33,7 +33,7 @@ spec:
       initContainers:
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh', '-c', "ls /app"]
+        command: ['sh', '-c', "/app.sh"]
         volumeMounts:
         - name: init-script
           mountPath: /app
@@ -77,7 +77,6 @@ metadata:
   name: init-script-configmap
 data:
   init.sh: |-
-    #!/bin/bash
     cat << EOF > ./account.js
     db = db.getSiblingDB('open5gs')
     cursor = db.accounts.find()
