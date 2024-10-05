@@ -22,7 +22,7 @@ spec:
         app: open5gs-mongodb
     spec:
       containers:
-      - image: mongo:6.0
+      - image: free5gmano/nextepc-mongodb
         name: open5gs-mongodb
         ports:
         - containerPort: 27017
@@ -30,11 +30,6 @@ spec:
         volumeMounts:
         - name: mongodb-persistent-storage
           mountPath: /data/db
-        env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: {{ .Values.db.username }}
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.db.password }}
       volumes:
       - name: mongodb-persistent-storage
         persistentVolumeClaim:
@@ -96,13 +91,6 @@ spec:
             cpu: "200m"
         ports: 
         - containerPort: 8081
-        env:
-        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
-          value: {{ .Values.db.username }}
-        - name: ME_CONFIG_MONGODB_SERVER
-          value: {{ .Release.Name }}-mongodb-svc
-        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
-          value: {{ .Values.db.password }}
 ---
 apiVersion: v1
 kind: Service
