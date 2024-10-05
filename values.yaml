@@ -75,3 +75,5 @@ k8s:
 
 db:
   name: open5gs
+  username: admin
+  password: password
