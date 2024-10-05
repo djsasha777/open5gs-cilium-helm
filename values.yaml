@@ -71,4 +71,4 @@ config:
 
 # Primary/Native kubernetes interface
 k8s:
- interface: eth0
+ interface: ens18
