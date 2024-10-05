@@ -70,7 +70,7 @@ spec:
       containers:
       - name: init-myservice
         image: busybox:1.28
-        command: ["/app/script/init.sh"]
+        command: ["/app/init.sh"]
         volumeMounts:
         - name: init-script
           mountPath: /app
@@ -80,7 +80,6 @@ spec:
           name: init-script-configmap
           items:
           - key: init.sh
-            path: script
           defaultMode: 0777
       restartPolicy: Never
   backoffLimit: 4
