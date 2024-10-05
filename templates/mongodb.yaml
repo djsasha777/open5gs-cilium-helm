@@ -22,7 +22,7 @@ spec:
         app: open5gs-mongodb
     spec:
       containers:
-      - image: mongo:4.4.18
+      - image: mongo:6.0
         name: open5gs-mongodb
         ports:
         - containerPort: 27017
