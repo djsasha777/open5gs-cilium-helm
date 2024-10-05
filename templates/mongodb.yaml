@@ -30,18 +30,9 @@ spec:
         volumeMounts:
         - name: mongodb-persistent-storage
           mountPath: /data/db
-      initContainers:
-      - name: init-myservice
-        image: free5gmano/nextepc-mongodb
-        command: ['sh', '-c', "mongo open5gs /app/account.js"]
-        ports:
-        - containerPort: 27017
-          name: mongodb
-        volumeMounts:
-        - name: mongodb-persistent-storage
-          mountPath: /data/db
         - name: init-script
           mountPath: /app
+          command: ['sh', '-c', "mongo open5gs /app/account.js"]
       volumes:
       - name: mongodb-persistent-storage
         persistentVolumeClaim:
