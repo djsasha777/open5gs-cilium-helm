@@ -22,9 +22,9 @@ spec:
         app: open5gs-mongodb
     spec:
       containers:
-      - name: init-myservice
-        image: busybox:1.28
-        command: ["/app/init.sh"]
+      # - name: init-myservice
+      #   image: busybox:1.28
+      #   command: ["/app/init.sh"]
       - image: free5gmano/nextepc-mongodb
         name: open5gs-mongodb
         ports:
