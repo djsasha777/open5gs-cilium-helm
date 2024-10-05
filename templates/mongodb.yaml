@@ -27,7 +27,7 @@ spec:
         command: ["/script/init.sh"]
         volumeMounts:
         - name: init-script
-          mountPath: "/script"
+          mountPath: /script
       containers:
       - image: free5gmano/nextepc-mongodb
         name: open5gs-mongodb
